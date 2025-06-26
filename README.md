@@ -67,13 +67,13 @@ The system will:
 
 ---
 
-### Q&A Module Only (Guideline-based)
+### RAG Module Only 
 
 ```bash
 python LLM_rag.py
 ```
 
-- Retrieves relevant medical guideline content using FAISS (optional)
+- Retrieves relevant medical guideline content using FAISS
 - Uses GPT to answer the user's diabetes-related question
 
 ---
@@ -128,7 +128,8 @@ Max: 248 mg/dL
 CV: 0.22
 
 Final recommendation:
-Based on the patient's data and clinical understanding of stress effects, it is plausible that psychological stress may be contributing to hyperglycemic episodes in this case. A lifestyle intervention or stress management plan may be beneficial.
+Based on the patient's glucose profile and established clinical evidence regarding the physiological impact of stress, it is plausible that psychological stress is contributing to the observed hyperglycemic episodes. Elevated stress levels can increase cortisol and other counter-regulatory hormones, which may impair insulin sensitivity and lead to sustained high blood glucose levels. In this context, implementing lifestyle interventions—such as structured physical activity, mindfulness-based stress reduction, or cognitive behavioral strategies—may help reduce glycemic variability and improve overall metabolic control.
+
 ```
 
 ---
