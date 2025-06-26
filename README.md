@@ -16,7 +16,6 @@ This project was developed by Peidong Liu as part of a final-year research proje
 - Patient glucose risk profiling via statistical analysis
 - Integrated response combining LLM-based knowledge and patient data
 - Simple, modular structure with three independent Python scripts
-- Sample anonymized dataset included
 
 ---
 
