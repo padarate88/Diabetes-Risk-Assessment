@@ -43,14 +43,6 @@ cd Diabetes-Risk-Assessment
 ```bash
 pip install -r requirements.txt
 ```
-
-3. Set your OpenAI API key:
-
-```bash
-export OPENAI_API_KEY=your_key_here   # For Linux/macOS
-set OPENAI_API_KEY=your_key_here      # For Windows
-```
-
 ---
 
 ## Usage
