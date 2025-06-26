@@ -61,7 +61,7 @@ You will be prompted to:
 
 The system will:
 
-- Generate a medical answer using RAG (simulated)
+- Generate a medical answer using RAG 
 - Analyze the glucose pattern for that patient
 - Use GPT to combine both into a professional, contextual final assessment
 
