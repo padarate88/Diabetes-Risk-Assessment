@@ -6,7 +6,7 @@ This project implements a hybrid medical AI framework for assessing diabetes ris
 - **Glucose Time-Series Analysis:** Interprets individual patient blood glucose records.
 - **GPT-4o Reasoning:** Synthesizes medical knowledge and patient data to generate personalized recommendations.
 
-This project was developed by Peidong Liu as part of a final-year research project at the University of Auckland.
+This project was developed by Peidong Liu at the University of Auckland.
 
 ---
 
