@@ -1,18 +1,158 @@
-# Hybrid AI for Personalized Diabetes Risk Assessment
+# Hybrid AI Framework for Personalized Diabetes Risk Assessment
 
 This project implements a hybrid medical AI framework for assessing diabetes risk. It combines three core components:
 
-- Retrieval-Augmented Generation (RAG) to answer diabetes-related questions using embedded clinical guidelines
-- Glucose Time-Series Analysis to interpret individual patient data
-- GPT-4o-based reasoning to synthesize responses and provide personalized recommendations
+- **Retrieval-Augmented Generation (RAG):** Answers diabetes-related questions using embedded clinical guidelines.
+- **Glucose Time-Series Analysis:** Interprets individual patient blood glucose records.
+- **GPT-4o Reasoning:** Synthesizes medical knowledge and patient data to generate personalized recommendations.
 
 This project was developed by Peidong Liu as part of a final-year research project at the University of Auckland.
 
+---
+
+## Features
+
+- Medical Q&A based on New Zealand clinical guidelines (simulated via GPT-4o)
+- Patient glucose risk profiling via statistical analysis
+- Integrated response combining LLM-based knowledge and patient data
+- Simple, modular structure with three independent Python scripts
+- Sample anonymized dataset included
+
+---
+
+## System Requirements
+
+- Python 3.8 or higher
+- OpenAI API Key (GPT-4 or GPT-4o access required)
+- CSV-format glucose data file (columns: `ID`, `time`, `gl`)
+- Internet connection for GPT queries
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/padarate88/Diabetes-Risk-Assessment.git
+cd Diabetes-Risk-Assessment
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Set your OpenAI API key:
+
+```bash
+export OPENAI_API_KEY=your_key_here   # For Linux/macOS
+set OPENAI_API_KEY=your_key_here      # For Windows
+```
+
+---
+
+## Usage
+
+### Full Pipeline: Medical Q&A + Glucose Analysis + Final Recommendation
+
+```bash
+python MAIN222.py
+```
+
+You will be prompted to:
+
+- Enter a medical question
+- Select a patient ID from the glucose data
+- (Optional) Add a new glucose reading
+
+The system will:
+
+- Generate a medical answer using RAG (simulated)
+- Analyze the glucose pattern for that patient
+- Use GPT to combine both into a professional, contextual final assessment
+
+---
+
+### Q&A Module Only (Guideline-based)
+
+```bash
+python LLM_rag.py
+```
+
+- Retrieves relevant medical guideline content using FAISS (optional)
+- Uses GPT to answer the user's diabetes-related question
+
+---
+
+### Glucose Analysis Module Only
+
+```bash
+python NEWTS.py
+```
+
+- Reads time-series glucose data from `Test_data.csv`
+- Computes: mean, max, % above 200, % below 70, coefficient of variation
+- Uses GPT to interpret results and assess risk level
+
+---
+
 ## Project Structure
 
-The main components of this project include:
+```
+├── LLM_rag.py           # Medical Q&A module using GPT (simulated RAG)
+├── NEWTS.py             # Glucose time-series risk analysis
+├── MAIN222.py           # Main pipeline: question + data → final output
+├── Test_data.csv        # Example anonymized glucose records
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+├── .gitignore           # Git exclusions
+```
 
-- `LLM_rag.py`: A document-based question-answering module that uses FAISS and GPT to retrieve and respond to diabetes-related medical questions
-- `NEWTS.py`: A glucose time-series analysis module that uses GPT to assess diabetes risk based on patient blood glucose data
-- `MAIN222.py`: A full pipeline that combines user questions, guideline-based answers, and glucose data to provide personalized medical recommendations
-- `data/Test_data.csv`: A sample anonymized glucose dataset for testing and demonstration purposes
+---
+
+## Methodology
+
+- Embedding model: Sentence-BERT (MiniLM-L6-v2)
+- Retrieval: FAISS (local index, optional in simulation)
+- Large Language Model: GPT-4o (via OpenAI API)
+- Statistical metrics: mean, max, % high (>200), % low (<70), CV
+- Integration: Prompt engineering to combine guideline + patient data
+
+---
+
+## Sample Output
+
+```
+User question:
+Can stress contribute to higher glucose levels?
+
+Glucose profile (Patient ID 003):
+Mean: 182.6 mg/dL
+Max: 248 mg/dL
+% Above 200: 28.4%
+% Below 70: 1.2%
+CV: 0.22
+
+Final recommendation:
+Based on the patient's data and clinical understanding of stress effects, it is plausible that psychological stress may be contributing to hyperglycemic episodes in this case. A lifestyle intervention or stress management plan may be beneficial.
+```
+
+---
+
+## License
+
+```
+This project is provided for academic or educational reference only.
+
+You may not copy, modify, redistribute, or use this code or any derivative work for commercial or public deployment without written permission from the author.
+
+All rights reserved.
+```
+
+---
+
+## Contact
+
+Peidong Liu 3199519996@qq.com
