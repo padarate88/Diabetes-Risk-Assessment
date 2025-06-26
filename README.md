@@ -12,7 +12,7 @@ This project was developed by Peidong Liu as part of a final-year research proje
 
 ## Features
 
-- Medical Q&A based on New Zealand clinical guidelines (simulated via GPT-4o)
+- Medical Q&A based on New Zealand clinical guidelines
 - Patient glucose risk profiling via statistical analysis
 - Integrated response combining LLM-based knowledge and patient data
 - Simple, modular structure with three independent Python scripts
